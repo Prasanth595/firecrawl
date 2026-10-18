@@ -97,6 +97,10 @@ export function keylessExhaustionTelemetry(ip: string): Record<string, string> {
 
 export { keylessTeamId, keylessTeamUuid };
 
+export function isKeylessTeamId(teamId: string): boolean {
+  return teamId.startsWith(KEYLESS_TEAM_PREFIX);
+}
+
 function keylessIpFromTeamId(teamId: string): string | null {
   return teamId.startsWith(KEYLESS_TEAM_PREFIX)
     ? teamId.slice(KEYLESS_TEAM_PREFIX.length)
